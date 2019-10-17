@@ -7,7 +7,8 @@ var willekeurig ;
 // functie die een willekeurig woord selecteerd
 // function that selects a random word
 function WW (woord) {
-    var RN = Math.round(Math.random() * --Woorden.length);
+    var Wmath = Woorden.length
+    var RN = Math.round(Math.random() * --Wmath);
     willekeurig = woord[RN];
     return willekeurig;
 }
@@ -16,10 +17,19 @@ function WW (woord) {
 // function that shows the spaces for the letters
 var toonWoord = document.getElementById("woord")
 function uitkomst() {
-    console.log (willekeurig.length);
     for (let i = 0; i < willekeurig.length; i++) {
         var span = document.createElement('span');
         span.textContent = "_";
         toonWoord.appendChild(span);
     }
 }
+
+var letter = document.getElementById('letter');
+letter.addEventListener('change', function woordcheck(Lvalue) {
+    var Lvalue = letter.value;
+    for (let i = 0; i <= willekeurig.length; i++) {
+        if (Lvalue === willekeurig[i]) {
+            console.log(Lvalue);
+        }
+    }
+});

@@ -12,6 +12,10 @@ div {
     text-align: center;
 }
 
+.SP {
+    height: 0;
+}
+
 #Galg {
     width: 60%;
     height: 400px;
